@@ -4,11 +4,11 @@ use SHIFT\Spotify\SpotifyClient;
 chdir(__DIR__);
 require "../vendor/autoload.php";
 
-$config = parse_ini_file("config.ini", true);
+$config = parse_ini_file("config.ini");
 
 $client = new SpotifyClient(
-	$config["spotify"]["client_id"],
-	$config["spotify"]["client_secret"],
+	$config["client_id"],
+	$config["client_secret"],
 );
 $track = $client->tracks->get("2YLtiKqJcwF8arLMuZtB3q");
 
