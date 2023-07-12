@@ -1,8 +1,8 @@
 <?php
 use SHIFT\Spotify\SpotifyClient;
 
-chdir(dirname(__DIR__));
-require "vendor/autoload.php";
+chdir(__DIR__);
+require "../vendor/autoload.php";
 
 $config = parse_ini_file("config.ini", true);
 

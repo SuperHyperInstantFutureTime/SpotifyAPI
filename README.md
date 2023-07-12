@@ -24,6 +24,8 @@ What's left to complete:
 - [x] Get Artist details
 - [x] Get Track details
 - [ ] Search API
+- [ ] Exception handling
+- [ ] Unit tests
 - [ ] All Album API endpoints
 - [ ] All Artist API endpoints
 - [ ] All Track API endpoints
