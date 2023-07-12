@@ -3,15 +3,7 @@ Self-documenting Spotify Web API.
 
 This library is an SDK to [Spotify's v1 Web API][spotify-api]. It provides a rich, type-safe, self-documenting, object oriented interface.
 
-Example code:
-
-```php
-$client = new SpotifyClient($clientId, $clientSecret);
-
-$album = $client->albums->get("0EU6tGR8ryGiMeEn5KE2LB");
-echo "You have selected {$album->name} by {$album->artists[0]->name}.", PHP_EOL;
-echo "This album has {$album->totalTracks} tracks, and was released in ", $album->releaseDate->format("Y"), ".", PHP_EOL;
-```
+https://github.com/SuperHyperInstantFutureTime/SpotifyAPI/assets/358014/58713ce1-a748-44bc-91f4-e7fdfd3b2979
 
 Work in progress
 ----------------
