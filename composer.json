@@ -1,0 +1,16 @@
+{
+	"name": "superhyperinstantfuturetime/spotify-api",
+	"description": " Self-documenting Spotify web API.",
+	"require": {
+		"php": ">=8.2",
+		"phpgt/fetch": "^1.1"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^1.10"
+	},
+	"autoload": {
+		"psr-4": {
+			"SHIFT\\Spotify\\": "./src"
+		}
+	}
+}
