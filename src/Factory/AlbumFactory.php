@@ -61,7 +61,7 @@ class AlbumFactory extends AbstractFactory {
 			$json->getString("uri"),
 			$copyrights,
 			$externalIds,
-			$json->get("genres"), // TODO: Once PHPGt/DataObject#46 is fixed, change to $json->getArray("genres", "string")
+			$json->getArray("genres", "string"),
 			$json->getString("label"),
 			$json->getInt("popularity"),
 			$artists,

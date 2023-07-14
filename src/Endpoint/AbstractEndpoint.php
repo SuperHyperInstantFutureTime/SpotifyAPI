@@ -15,12 +15,4 @@ abstract class AbstractEndpoint {
 		protected readonly ArtistFactory $artistFactory,
 		protected readonly TrackFactory $trackFactory,
 	) {}
-
-	abstract public function get(string $id):AbstractEntity;
-
-	/**
-	 * @param array<string> $idList
-	 * @return array<AbstractEntity>
-	 */
-	abstract public function getSeveral(array $idList):array;
 }

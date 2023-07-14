@@ -12,7 +12,7 @@ class AccessTokenFactory {
 		}
 
 		$fileContents = file_get_contents($this->cacheFile);
-		return unserialize($fileContents);
+		return unserialize($fileContents) ?: null;
 	}
 
 	public function save(AccessToken $accessToken):void {

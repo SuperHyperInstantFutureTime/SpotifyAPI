@@ -14,7 +14,7 @@ readonly class AccessToken implements Stringable {
 
 	public function isAlive():bool {
 		$now = new DateTime();
-		return $this->expiresAt > $now;
+		return $this->expiresAt->getTimestamp() > $now->getTimestamp();
 	}
 
 	public function __toString():string {
