@@ -13,5 +13,5 @@ $client = new SpotifyClient(
 $artist = $client->artists->get("183vQCgpuNJHxdDCYIpkA4");
 
 echo "You have selected {$artist->name}.", PHP_EOL;
-echo "They have {$artist->followers->total} followers and a popularity of {$artist->popularity}.", PHP_EOL;
+echo "They have ", number_format($artist->followers->total), " followers and a popularity of {$artist->popularity}/100.", PHP_EOL;
 echo "Their genres are: ", implode(", ", $artist->genres), ".", PHP_EOL;
