@@ -6,11 +6,17 @@
 		"phpgt/fetch": "^1.1"
 	},
 	"require-dev": {
-		"phpstan/phpstan": "^1.10"
+		"phpstan/phpstan": "^1.10",
+		"phpunit/phpunit": "^10.2"
 	},
 	"autoload": {
 		"psr-4": {
 			"SHIFT\\Spotify\\": "./src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"SHIFT\\Spotify\\Test\\": "./test/phpunit"
 		}
 	}
 }
