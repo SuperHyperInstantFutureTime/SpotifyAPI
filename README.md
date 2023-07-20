@@ -15,7 +15,7 @@ What's left to complete:
 - [x] Get Album details
 - [x] Get Artist details
 - [x] Get Track details
-- [ ] Search API
+- [ ] Search API - currently WIP, still to do: PlaylistPage, ShowPage, EpisodePage, AudiobookPage 
 - [ ] Exception handling
 - [ ] Unit tests
 - [ ] All Album API endpoints
