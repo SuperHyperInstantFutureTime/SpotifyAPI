@@ -13,11 +13,6 @@ $config = parse_ini_file("config.ini");
 $clientId = $config["client_id"];
 $clientSecret = $config["client_secret"];
 
-
-
-
-
-
 $client = new SpotifyClient($clientId, $clientSecret);
 $searchResults = $client->search->query(
 	"crash of rhinos",
@@ -28,11 +23,6 @@ $albums = $client->artists->getAlbums(
 	$searchResults->artists->items[0]->id,
 	new IncludeGroups(Group::album)
 );
-
-
-
-
-
 
 echo "The matching artist, $artist->name, has ",
 	number_format($artist->followers->total),

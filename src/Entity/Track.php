@@ -7,7 +7,7 @@ readonly class Track extends AbstractEntity {
 	 * @param array<string> $availableMarkets
 	 */
 	public function __construct(
-		public Album $album,
+		public ?Album $album,
 		public array $artists,
 		public array $availableMarkets,
 		public int $discNumber,

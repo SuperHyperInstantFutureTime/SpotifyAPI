@@ -151,9 +151,6 @@ class SpotifyClient {
 				return $response->json();
 			})->then(function(JsonObject $jsonObject) {
 				$this->jsonObjectResponse = $jsonObject;
-			})
-			->catch(function(Throwable $exception) {
-				echo "Error: {$exception->getMessage()}", PHP_EOL;
 			});
 // @codeCoverageIgnoreEnd
 

@@ -5,6 +5,8 @@ use Gt\Http\RequestMethod;
 use Gt\Json\JsonObject;
 use SHIFT\Spotify\Entity\SearchFilter;
 use SHIFT\Spotify\Entity\SearchResult;
+use SHIFT\Spotify\Factory\AlbumFactory;
+use SHIFT\Spotify\Factory\TrackFactory;
 use SHIFT\Spotify\Page\AbstractPage;
 use SHIFT\Spotify\Page\AlbumPage;
 use SHIFT\Spotify\Page\ArtistPage;
@@ -151,7 +153,18 @@ class SearchEndpoint extends AbstractEndpoint {
 		};
 		$entityList = [];
 		foreach($items as $item) {
-			array_push($entityList, $entityFactory->fromJsonObject($item));
+			if($entityFactory instanceof TrackFactory) {
+				$album = null;
+				$album = $this->albumFactory->fromJsonObject($item->get("album"));
+				array_push($entityList, $entityFactory->fromJsonObject(
+					$item,
+					$album,
+					$album?->artists
+				));
+			}
+			elseif($entityFactory instanceof AlbumFactory) {
+				array_push($entityList, $entityFactory->fromJsonObject($item));
+			}
 		}
 
 		return new $className(

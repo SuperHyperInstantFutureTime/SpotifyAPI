@@ -38,8 +38,8 @@ class TrackFactory extends AbstractFactory {
 
 		return new Track(
 			$album,
-			$artists,
-			$json->getArray("available_markets", "string"),
+			$artists ?? [],
+			$json->getArray("available_markets", "string") ?? [],
 			$json->getInt("disc_number"),
 			$json->getInt("duration_ms"),
 			$json->getBool("explicit"),
