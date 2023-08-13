@@ -20,7 +20,7 @@ class SearchEndpoint extends AbstractEndpoint {
 		?string $includeExternal = null,
 	):SearchResult {
 		$params = [
-			"q" => urlencode($query),
+			"q" => $query,
 			"type" => (string)$searchType,
 			"limit" => $limit,
 			"offset" => $offset,
