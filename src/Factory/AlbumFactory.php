@@ -49,7 +49,7 @@ class AlbumFactory extends AbstractFactory {
 		return new Album(
 			AlbumType::fromString($json->getString("album_type")),
 			$json->getInt("total_tracks"),
-			$json->getArray("available_markets", "string"),
+			$json->getArray("available_markets", "string") ?? [],
 			new ExternalUrlsObject($json->getObject("external_urls")),
 			$json->getString("href"),
 			$json->getString("id"),
