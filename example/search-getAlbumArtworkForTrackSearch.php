@@ -15,12 +15,14 @@ $config = parse_ini_file("config.ini");
 $clientId = $config["client_id"];
 $clientSecret = $config["client_secret"];
 
-$artistName = "Richard John Birkin";
-$trackName = "Vigil V";
+$artistName = "Order of the Toad";
+$trackName = "Spirit Man";
 
 $client = new SpotifyClient($clientId, $clientSecret);
+$query = new FilterQuery(artist: $artistName, album: $trackName);
+
 $searchResults = $client->search->query(
-	"artist: '$artistName' album: '$trackName'",
+	$query,
 	new SearchFilter(EntityType::album, EntityType::track),
 	"GB",
 	limit: 5

@@ -122,8 +122,12 @@ class SpotifyClient {
 		];
 		if($kvp) {
 			if($method === RequestMethod::GET) {
-				$query = new URLSearchParams($kvp);
-				$endpoint .= "?$query";
+				$endpoint .= "?";
+// This should use URLSearchParams, which handles all encoding to web standards...
+// ...but if it's done "correctly", Spotify's API breaks! This is a workaround for some strange API behaviour.
+				foreach($kvp as $key => $value) {
+					$endpoint .= "&$key=$value";
+				}
 			}
 			else {
 				$formData = new FormData();
